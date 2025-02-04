@@ -1,0 +1,12 @@
+{
+    "name": "Fintech Project Dev Container",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",  
+    "postCreateCommand": "./scripts/setup-credentials.sh",
+    "mounts": [
+      "source=${localEnv:HOME}/.config/gcloud,target=/root/.config/gcloud,type=bind"
+    ],
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:1": {}
+    }
+  }
+  
