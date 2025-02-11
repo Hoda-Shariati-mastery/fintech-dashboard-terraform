@@ -25,14 +25,15 @@ Tech Stack
 Setup
 Prerequisites
 
-    Install the following tools:
-        Docker
-        Terraform
-        Google Cloud CLI
-        VSCode
-        Git
-    Configure your Google Cloud account and project.
+Make sure the following tools are installed on your system:
 
+    Docker: For containerization and deployment.
+    Terraform: For managing infrastructure as code.
+    Google Cloud CLI: For managing Google Cloud resources.
+    VSCode: The preferred code editor for development.
+    Git: For version control.
+
+Configure your Google Cloud account and project before starting the setup.
 Steps to Set Up
 
     Clone this repository:
@@ -42,7 +43,7 @@ cd <repository-folder>
 
 Set up Google Cloud infrastructure:
 
-    Navigate to the terraform directory:
+Navigate to the terraform directory:
 
 cd terraform
 
@@ -50,23 +51,26 @@ Initialize Terraform:
 
 terraform init
 
-Apply configurations:
+Apply the configurations to set up the infrastructure:
 
-    terraform apply
+terraform apply
 
 Launch Docker containers:
+
+Run the following command to start the required Docker containers:
 
 docker-compose up
 
 Run the Flask application:
 
-    Navigate to the api directory:
+Navigate to the api directory:
 
-        cd api
-        python app.py
+    cd api
+    python app.py
 
     Test and Explore:
-        Access the APIs or dashboards exposed on your configured ports.
+
+    Access the APIs or dashboards exposed on your configured ports.
 
 Project Goals
 
@@ -76,6 +80,8 @@ Project Goals
 
 Future Enhancements
 
-    BigQuery Integration for faster querying.
-    Authentication System for secured access.
-    Frontend Dashboard with interactive visualizations.# fintech-dashboard-terraform
+    BigQuery Integration: For faster querying and scalable analytics.
+    Authentication System: To secure APIs and data access.
+    Frontend Dashboard: Interactive visualizations for better user experience.
+
+
