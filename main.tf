@@ -119,3 +119,23 @@ variable "db_password" {
   type      = string
   sensitive = true
 }
+
+# BigQuery dataset
+resource "google_bigquery_dataset" "dataset" {
+  dataset_id                  = "credit_card_transactions_fraud_detection"
+  friendly_name               = "Credit Card Transactions Fraud Detection Dataset"
+  description                 = "Dataset for storing credit card transaction data for fraud detection."
+  location                    = "EU"
+
+  access {
+    role          = "roles/bigquery.dataOwner"
+    user_by_email = "terraform-runner@fintech-dashboard-terraform.iam.gserviceaccount.com"
+  }
+}
+
+# Grant the terraform-runner service account the bigquery.dataOwner role for the dataset
+resource "google_bigquery_dataset_iam_member" "dataset_iam_member" {
+  dataset_id = google_bigquery_dataset.dataset.dataset_id
+  role       = "roles/bigquery.dataOwner"
+  member     = "serviceAccount:terraform-runner@fintech-dashboard-terraform.iam.gserviceaccount.com"
+}
