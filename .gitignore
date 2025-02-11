@@ -36,3 +36,9 @@ gcloud-config/
 
 # System Files
 Thumbs.db
+# Ignore large zip file
+creditcardfraud.zip
+
+# Ignore data directory
+data/
+
