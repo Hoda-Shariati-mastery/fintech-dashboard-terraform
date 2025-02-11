@@ -41,4 +41,6 @@ creditcardfraud.zip
 
 # Ignore data directory
 data/
+.env
+
 
